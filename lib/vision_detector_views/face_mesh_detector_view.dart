@@ -8,6 +8,8 @@ import 'detector_view.dart';
 import 'painters/face_mesh_detector_painter.dart';
 
 class FaceMeshDetectorView extends StatefulWidget {
+  const FaceMeshDetectorView({super.key});
+
   @override
   State<FaceMeshDetectorView> createState() => _FaceMeshDetectorViewState();
 }
@@ -32,8 +34,8 @@ class _FaceMeshDetectorViewState extends State<FaceMeshDetectorView> {
   Widget build(BuildContext context) {
     if (Platform.isIOS) {
       return Scaffold(
-        appBar: AppBar(title: Text('Under construction')),
-        body: Center(
+        appBar: AppBar(title: const Text('Under construction')),
+        body: const Center(
             child: Text(
           'Not implemented yet for iOS :(\nTry Android',
           textAlign: TextAlign.center,

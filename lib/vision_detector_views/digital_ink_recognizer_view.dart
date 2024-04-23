@@ -4,6 +4,8 @@ import 'package:google_mlkit_digital_ink_recognition/google_mlkit_digital_ink_re
 import '../activity_indicator/activity_indicator.dart';
 
 class DigitalInkView extends StatefulWidget {
+  const DigitalInkView({super.key});
+
   @override
   State<DigitalInkView> createState() => _DigitalInkViewState();
 }
@@ -38,45 +40,45 @@ class _DigitalInkViewState extends State<DigitalInkView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Digital Ink Recognition')),
+      appBar: AppBar(title: const Text('Digital Ink Recognition')),
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _buildDropdown(),
                   ElevatedButton(
                     onPressed: _isModelDownloaded,
-                    child: Text('Check Model'),
+                    child: const Text('Check Model'),
                   ),
                   ElevatedButton(
                     onPressed: _downloadModel,
-                    child: Icon(Icons.download),
+                    child: const Icon(Icons.download),
                   ),
                   ElevatedButton(
                     onPressed: _deleteModel,
-                    child: Icon(Icons.delete),
+                    child: const Icon(Icons.delete),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
                     onPressed: _recogniseText,
-                    child: Text('Read Text'),
+                    child: const Text('Read Text'),
                   ),
                   ElevatedButton(
                     onPressed: _clearPad,
-                    child: Text('Clear Pad'),
+                    child: const Text('Clear Pad'),
                   ),
                 ],
               ),
@@ -117,7 +119,7 @@ class _DigitalInkViewState extends State<DigitalInkView> {
             if (_recognizedText.isNotEmpty)
               Text(
                 'Candidates: $_recognizedText',
-                style: TextStyle(fontSize: 23),
+                style: const TextStyle(fontSize: 23),
               ),
           ],
         ),
@@ -193,7 +195,7 @@ class _DigitalInkViewState extends State<DigitalInkView> {
   Future<void> _recogniseText() async {
     showDialog(
         context: context,
-        builder: (context) => AlertDialog(
+        builder: (context) => const AlertDialog(
               title: Text('Recognizing'),
             ),
         barrierDismissible: true);

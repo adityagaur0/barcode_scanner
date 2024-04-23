@@ -6,6 +6,8 @@ import 'painters/label_detector_painter.dart';
 import 'utils.dart';
 
 class ImageLabelView extends StatefulWidget {
+  const ImageLabelView({super.key});
+
   @override
   State<ImageLabelView> createState() => _ImageLabelViewState();
 }
@@ -49,7 +51,7 @@ class _ImageLabelViewState extends State<ImageLabelView> {
     // make sure to add tflite model to assets/ml
     // final path = 'assets/ml/lite-model_aiy_vision_classifier_birds_V1_3.tflite';
     // final path = 'assets/ml/object_labeler_flowers.tflite';
-    final path = 'assets/ml/object_labeler.tflite';
+    const path = 'assets/ml/object_labeler.tflite';
     final modelPath = await getAssetPath(path);
     final options = LocalLabelerOptions(modelPath: modelPath);
     _imageLabeler = ImageLabeler(options: options);

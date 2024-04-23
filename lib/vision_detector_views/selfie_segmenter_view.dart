@@ -6,6 +6,8 @@ import 'detector_view.dart';
 import 'painters/segmentation_painter.dart';
 
 class SelfieSegmenterView extends StatefulWidget {
+  const SelfieSegmenterView({super.key});
+
   @override
   State<SelfieSegmenterView> createState() => _SelfieSegmenterViewState();
 }
